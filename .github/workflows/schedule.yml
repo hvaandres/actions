@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+      - development
+      - qa
 
 jobs:
   actions:
@@ -13,6 +15,7 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6.x
+          
       - name: Render latest template
         run: |
           ruby build.rb
